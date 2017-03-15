@@ -37,14 +37,28 @@ def processdata(x):
     x[41], uniques=pd.factorize(x[41])
     
     
-    retx=np.array(x)
+    
     rety=np.array(x[41])
+    x=x.drop(41,1)
+    retx=np.array(x)
     
     return retx,rety
+
 print("loading")
 train_x,train_y=processdata(train_X)
 
 testx,testy=processdata(test_x)
+##===============================================
+train_x=train_x.astype(np.int32)
+testx=testx.astype(np.int32)
+
+
+pca=PCA(n_components=15,copy=False)  
+train_x=pca.fit_transform(train_x)
+testx=pca.transform(testx)
+
+
+##===============================================
 
 print("predicting")
 alg=KNeighborsClassifier(n_jobs =-1)
