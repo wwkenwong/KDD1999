@@ -1,0 +1,4 @@
+predicting
+error of Kneighbour :0.0802304608252
+rf :0.0793173626897
+--- seconds --- :23009.31863427162
