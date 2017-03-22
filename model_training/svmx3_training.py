@@ -68,7 +68,7 @@ print('loading')
 pca = joblib.load('pca_module_9.pkl')
 print('PCA LOADED')
 #=======KNN 1 3 5=================
-x = pd.read_csv("kddcup.data_10_percent_corrected", header=None)
+x = pd.read_csv("kddcup.data.corrected", header=None)
 test_x_ = pd.read_csv("corrected", header=None)
 print('loaded')
 train_x,train_y=processdata(x)
